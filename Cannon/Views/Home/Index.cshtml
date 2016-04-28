@@ -1,0 +1,23 @@
+﻿<div class="text-center col-lg-12">
+    <h1>DO YOU WANT TO FIRE ZE MISSILES</h1>
+    <button class="btn btn-danger btn-lg" type="button" onclick="fire()">YES! FIRE ZE MISSILES</button>
+</div>
+
+
+<script type="text/javascript">
+    function success(data) {
+        $('#Response').val(data);
+    }
+
+    function fire() {
+        $.ajax({
+            url: '@Url.Action("Fire", "Home")',
+            type: 'GET',
+            dataType: 'json',
+            cache: false,
+            success: success
+        });
+    }
+
+    
+</script>
